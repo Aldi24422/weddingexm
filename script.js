@@ -1,7 +1,22 @@
-// 0. AMBIL NAMA TAMU DARI URL (?to=NamaTamu)
+// 0. AMBIL NAMA TAMU DARI URL
+// Mendukung 2 format:
+//   - Path:  https://weddingexm.vercel.app/Aldi
+//   - Query: https://weddingexm.vercel.app/?to=Aldi
 (function () {
-    const params = new URLSearchParams(window.location.search);
-    const namaTamu = params.get('to') || 'Tamu Spesial';
+    let namaTamu = 'Tamu Spesial';
+
+    // Cek dari path dulu (misal /Aldi atau /Budi%20Santoso)
+    const path = window.location.pathname.replace(/^\//, ''); // hapus slash depan
+    if (path && path !== 'index.html') {
+        namaTamu = decodeURIComponent(path);
+    } else {
+        // Fallback ke query param ?to=NamaTamu
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('to')) {
+            namaTamu = params.get('to');
+        }
+    }
+
     document.getElementById('nama-tamu').textContent = namaTamu;
     document.getElementById('input-nama').value = namaTamu;
 })();
