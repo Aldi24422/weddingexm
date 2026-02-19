@@ -1,0 +1,4 @@
+# PHP Legacy Files (not needed for static site)
+index.php
+koneksi.php
+db_undangan.sql

@@ -1,0 +1,404 @@
+:root {
+    --primary: #768A76;
+    /* Sage Green */
+    --gold: #C5A059;
+    /* Gold */
+    --dark: #333;
+    --bg: #F9F9F9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* ANIMASI SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FONT & TEXT */
+.title-font,
+.groom-name,
+.bride-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+}
+
+.sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.guest-name {
+    font-weight: bold;
+    /* <--- INI KUNCINYA */
+    font-size: 1rem;
+    /* Sekalian besarin dikit biar mantap */
+    color: #000;
+    /* Warna hitam pekat biar kontras */
+    margin: 5px 0;
+}
+
+.text-body {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+.bismillah {
+    width: 300px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* COVER AREA */
+.cover-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 1s ease-in-out;
+}
+
+.cover-photo img {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 100px 100px 0 0;
+    border: 5px solid var(--gold);
+    margin: 20px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-open {
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+    max-width: 300px;
+    position: relative;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.couple-names {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.groom-name,
+.bride-name {
+    font-size: 2rem;
+    margin: 5px 0;
+}
+
+.dan-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    display: block;
+}
+
+/* DETAIL ACARA (YANG HILANG TADI) */
+.event-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--primary);
+}
+
+.event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.btn-map {
+    display: inline-block;
+    background: var(--dark);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 0.8rem;
+}
+
+/* COUNTDOWN */
+.section-gray {
+    background: var(--bg);
+    padding: 50px 20px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+#countdown-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.time-item {
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    width: 70px;
+    border-radius: 8px;
+}
+
+.time-item span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+/* BANK GIFT */
+.bank-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 350px;
+    text-align: center;
+}
+
+.bank-logo {
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.btn-copy {
+    background: var(--dark);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* FORM UCAPAN */
+/* --- FORM UCAPAN (YANG DIPERBAIKI) --- */
+.section-wishes {
+    padding: 50px 20px;
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Container Form biar Rapi */
+.form-container form {
+    display: flex;
+    /* Jurus Flexbox */
+    flex-direction: column;
+    /* Paksa susun ke bawah */
+    gap: 15px;
+    /* Jarak antar kolom */
+    text-align: left;
+    /* Teks rata kiri biar rapi */
+}
+
+/* Styling Kotak Input & Textarea */
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    /* Lebar Penuh */
+    padding: 15px;
+    /* Spasi dalam biar lega */
+    border: 1px solid #ccc;
+    /* Garis pinggir halus */
+    border-radius: 10px;
+    /* Sudut tumpul */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background: #fdfdfd;
+    box-sizing: border-box;
+    /* Penting: Biar padding gak bikin lebar offside */
+}
+
+/* Khusus Input Nama Tamu (Readonly) */
+.form-container input[readonly] {
+    background-color: #e9ecef;
+    /* Abu-abu muda tanda gak bisa diedit */
+    color: #6c757d;
+    cursor: not-allowed;
+    font-weight: bold;
+    border: 1px solid #dcdcdc;
+}
+
+/* Tombol Kirim */
+.btn-kirim {
+    width: 100%;
+    background: var(--primary);
+    /* Hijau Sage */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    /* Tombol bulat lonjong */
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(118, 138, 118, 0.3);
+}
+
+.btn-kirim:hover {
+    background: var(--gold);
+    /* Berubah jadi emas pas disorot */
+    transform: translateY(-2px);
+}
+
+/* List Ucapan di Bawahnya */
+.wishes-list {
+    margin-top: 40px;
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: left;
+    border-top: 2px dashed #eee;
+    padding-top: 20px;
+}
+
+.wish-card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    border-left: 4px solid var(--primary);
+    /* Garis hijau di kiri */
+}
+
+.wish-card strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.wish-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* --- TOMBOL MUSIK (INI YANG HILANG KEMARIN) --- */
+#music-control {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: none;
+    /* Muncul via JS */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-spin {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--dark);
+    color: white;
+    font-size: 0.8rem;
+    margin-top: 50px;
+}
+
+.section-padding {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
